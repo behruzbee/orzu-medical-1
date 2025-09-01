@@ -128,6 +128,11 @@ if (submitBtn) {
     const payload = { ...state, fullName, branch };
 
     try {
+      // Включаем loading
+      submitBtn.disabled = true;
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = "Отправка...";
+
       await fetch(ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -146,6 +151,9 @@ if (submitBtn) {
     } catch (e) {
       console.error(e);
       showToast("Ошибка отправки");
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Отправить";
     }
   });
 }
