@@ -125,11 +125,6 @@ if (submitBtn) {
       return;
     }
 
-    if (submissionCount >= MAX_SUBMISSIONS) {
-      blockPage("Спасибо! Ваша оценка успешно отправлена.");
-      return;
-    }
-
     const payload = { ...state, fullName, branch };
 
     try {
@@ -151,12 +146,7 @@ if (submitBtn) {
       updateProgressUI();
       swiper.slideTo(0);
 
-      // Если достигнут лимит
-      if (submissionCount >= MAX_SUBMISSIONS) {
-        blockPage(
-          "Вы достигли максимального количества отправок. Доступ к опросу заблокирован."
-        );
-      }
+      blockPage("Спасибо! Ваша оценка успешно отправлена.");
     } catch (e) {
       console.error(e);
       showToast("Ошибка отправки");
