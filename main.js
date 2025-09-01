@@ -135,10 +135,6 @@ if (submitBtn) {
       });
 
       submissionCount++;
-      showToast(
-        `Спасибо! Ответ сохранён (${submissionCount}/${MAX_SUBMISSIONS})`
-      );
-
       // Сброс состояния и формы
       Object.keys(state).forEach((k) => (state[k] = null));
       document.getElementById("fullName").value = "";
