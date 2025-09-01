@@ -1,5 +1,5 @@
 // URL теперь на наш Node.js прокси
-const ENDPOINT = "http://localhost:3000/submit";
+const ENDPOINT = "https://orzu-medical-1-production.up.railway.app/submit";
 const MAX_SUBMISSIONS = 5;
 
 // Создание кнопок рейтинга
