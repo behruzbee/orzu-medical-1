@@ -1,6 +1,6 @@
 // URL теперь на наш Node.js прокси
 const ENDPOINT = "https://orzu-medical-1-production.up.railway.app/submit";
-const MAX_SUBMISSIONS = 5;
+const MAX_SUBMISSIONS = 1;
 
 // Создание кнопок рейтинга
 const makeRatingButtons = (container) => {
@@ -126,9 +126,7 @@ if (submitBtn) {
     }
 
     if (submissionCount >= MAX_SUBMISSIONS) {
-      blockPage(
-        "Вы достигли максимального количества отправок. Доступ к опросу заблокирован."
-      );
+      blockPage("Спасибо! Ваша оценка успешно отправлена.");
       return;
     }
 
